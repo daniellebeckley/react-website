@@ -3,8 +3,9 @@ import axios from "../services/api-client";
 import apiClient from "../services/api-client";
 import { SimpleGrid, Text } from "@chakra-ui/react";
 import useGames from "../hooks/useGames";
-import GameCard from "./GameCard";
-import GameCardSkeleton from "./GameCardSkeleton";
+import GameCard from "./cards/GameCard";
+import GameCardSkeleton from "./cards/GameCardSkeleton";
+import GameCardContainer from "./cards/GameCardContainer";
 
 const GameGrid = () => {
   const { error, games, loading } = useGames();
@@ -18,9 +19,16 @@ const GameGrid = () => {
         padding="10px"
         spacing={10}
       >
-        {loading && skeletons.map((skel) => <GameCardSkeleton key={skel} />)}
+        {loading &&
+          skeletons.map((skel) => (
+            <GameCardContainer>
+              <GameCardSkeleton key={skel} />
+            </GameCardContainer>
+          ))}
         {games.map((game) => (
-          <GameCard key={game.id} game={game}></GameCard>
+          <GameCardContainer>
+            <GameCard key={game.id} game={game}></GameCard>
+          </GameCardContainer>
         ))}
       </SimpleGrid>
     </>
