@@ -6,7 +6,7 @@ import { GrAndroid } from "react-icons/gr";
 import { MdPhoneIphone } from "react-icons/md";
 import { FaLinux } from "react-icons/fa";
 import { SiNintendo } from "react-icons/si";
-import { Platform } from "../hooks/useGames";
+import { Platform } from "../../../hooks/useGames";
 
 import { HStack, Icon } from "@chakra-ui/react";
 import { IconType } from "react-icons";
