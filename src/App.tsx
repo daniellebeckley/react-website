@@ -19,7 +19,7 @@ function App() {
         <NavBar></NavBar>
       </GridItem>
       <Show above="lg">
-        <GridItem area="aside" bg="red" paddingX={5}>
+        <GridItem area="aside" paddingX={5}>
           <GenreList></GenreList>
         </GridItem>
       </Show>
