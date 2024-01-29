@@ -31,6 +31,6 @@ const useData = <T>(endpoint: string) => {
 
     return () => controller.abort();
   }, []);
-  return { data, error, loading };
+  return { data, error, loading, setData };
 };
 export default useData;
