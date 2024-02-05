@@ -1,12 +1,21 @@
 import useGenres, { Genre } from "../hooks/useGenres";
-import { HStack, Heading, Image, List, ListItem, Text } from "@chakra-ui/react";
+import {
+  Button,
+  HStack,
+  Heading,
+  Image,
+  List,
+  ListItem,
+  Text,
+} from "@chakra-ui/react";
 import getCroppedImageUrl from "../services/Image-url";
 import { Spinner } from "@chakra-ui/react";
 
 interface Props {
-  onClick: (id: number) => void;
+  onSelectGenre: (genre: Genre) => void;
+  selectedGenre: Genre | null;
 }
-const GenreList = ({ onClick }: Props) => {
+const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
   const { data: genres, error, loading } = useGenres();
   if (loading) return <Spinner size="xl"></Spinner>;
   if (error) return null;
@@ -18,7 +27,7 @@ const GenreList = ({ onClick }: Props) => {
             paddingY="5px"
             key={genre.id}
             onClick={() => {
-              onClick(genre.id);
+              onSelectGenre(genre);
             }}
           >
             <HStack key={genre.id}>
@@ -31,10 +40,13 @@ const GenreList = ({ onClick }: Props) => {
                 alt={genre.name}
               />
               //change this to a button that logs the genre (or the function)
-              <Text fontSize="lg" key={genre.id}>
-                {" "}
-                {genre.name}{" "}
-              </Text>
+              <Button
+                fontSize="lg"
+                key={genre.id}
+                fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
+              >
+                {genre.name}
+              </Button>
             </HStack>
           </ListItem>
         ))}
