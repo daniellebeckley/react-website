@@ -7,7 +7,6 @@ import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
 import SortSelector from "./components/SortSelector";
-import SearchInput from "./components/SearchInput";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -53,7 +52,6 @@ function App() {
             selectedSortOrder={gameQuery.sort}
             onSelectSortOrder={(sort: string) => {
               setGameQuery({ ...gameQuery, sort });
-              console.log("sort order selected:" + sort);
             }}
           />
         </HStack>

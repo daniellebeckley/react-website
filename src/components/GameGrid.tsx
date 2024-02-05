@@ -11,37 +11,14 @@ interface Props {
 }
 const GameGrid = ({ gameQuery }: Props) => {
   const {
-    data: allGames,
+    data: games,
     error,
     loading,
     setData: setGames,
-  } = useGames(gameQuery.sort);
+  } = useGames(gameQuery);
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
 
-  let filteredGames = [...allGames];
-  if (gameQuery?.platform) {
-    filteredGames = [
-      ...filteredGames.filter((game) => {
-        const parentPlatformIds = game.parent_platforms.map(
-          (platform) => platform.platform.id
-        );
-        const has: number = parentPlatformIds.indexOf(
-          gameQuery.platform?.id || 0
-        );
-        return has > -1 ? game : null;
-      }),
-    ];
-  }
-  if (gameQuery?.genre) {
-    filteredGames = [
-      ...filteredGames.filter((game) => {
-        const genreIds = game.genres.map((g) => g.id);
-        const has: number = genreIds.indexOf(gameQuery.genre?.id || 0);
-        return has > -1 ? game : null;
-      }),
-    ];
-  }
-  if (filteredGames.length < 1 && !loading) {
+  if (games.length < 1 && !loading) {
     return (
       <>
         <Text>Sorry, no games meet your selection.</Text>
@@ -63,7 +40,7 @@ const GameGrid = ({ gameQuery }: Props) => {
               <GameCardSkeleton key={skel} />
             </GameCardContainer>
           ))}
-        {filteredGames.map((game) => (
+        {games.map((game) => (
           <GameCardContainer key={"game" + game.id}>
             <GameCard key={game.id} game={game}></GameCard>
           </GameCardContainer>
