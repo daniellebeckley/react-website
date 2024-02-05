@@ -14,7 +14,7 @@ export interface Game {
   metacritic: number;
   genres: Genre[];
 }
-
+//optional - passing in genre or platform to have the api filter - send params object from axios
 const useGames = () => useData<Game>("/games");
 
 export default useGames;

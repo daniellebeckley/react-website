@@ -6,23 +6,34 @@ import useGames from "../hooks/useGames";
 
 interface Props {
   selectedGenre: number;
+  selectedPlatform: number;
 }
-const GameGrid = ({ selectedGenre }: Props) => {
-  const { data: games, error, loading, setData: setGames } = useGames();
+const GameGrid = ({ selectedGenre, selectedPlatform }: Props) => {
+  const { data: allGames, error, loading, setData: setGames } = useGames();
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
 
-  const showGames =
-    selectedGenre === -1
-      ? games
-      : [
-          ...games.filter((game) => {
-            game.genres.length > 3 && games.length;
-            const genreIds = game.genres.map((g) => g.id);
-            const has: number = genreIds.indexOf(selectedGenre);
-            return has > -1 ? game : null;
-          }),
-        ];
-  if (showGames.length < 1 && !loading) {
+  let filteredGames = [...allGames];
+  if (selectedPlatform !== -1) {
+    filteredGames = [
+      ...filteredGames.filter((game) => {
+        const parentPlatformIds = game.parent_platforms.map(
+          (platform) => platform.platform.id
+        );
+        const has: number = parentPlatformIds.indexOf(selectedPlatform);
+        return has > -1 ? game : null;
+      }),
+    ];
+  }
+  if (selectedGenre !== -1) {
+    filteredGames = [
+      ...filteredGames.filter((game) => {
+        const genreIds = game.genres.map((g) => g.id);
+        const has: number = genreIds.indexOf(selectedGenre);
+        return has > -1 ? game : null;
+      }),
+    ];
+  }
+  if (filteredGames.length < 1 && !loading) {
     return (
       <>
         <Text>Sorry, no games meet your selection.</Text>
@@ -44,7 +55,7 @@ const GameGrid = ({ selectedGenre }: Props) => {
               <GameCardSkeleton key={skel} />
             </GameCardContainer>
           ))}
-        {showGames.map((game) => (
+        {filteredGames.map((game) => (
           <GameCardContainer key={"game" + game.id}>
             <GameCard key={game.id} game={game}></GameCard>
           </GameCardContainer>
