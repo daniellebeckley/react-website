@@ -16,13 +16,12 @@ export interface Game {
   genres: Genre[];
 }
 
-//optional - passing in genre or platform to have the api filter - send params object from axios
 const useGames = (sortOrder?: string) =>
   useData<Game>(
     "/games",
     {
       params: {
-        sortOrder: sortOrder,
+        ordering: sortOrder,
       },
     },
     [sortOrder]
