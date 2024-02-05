@@ -1,3 +1,4 @@
+import { GameQuery } from "../App";
 import useData from "./useData";
 import { Genre } from "./useGenres";
 
@@ -14,7 +15,17 @@ export interface Game {
   metacritic: number;
   genres: Genre[];
 }
+
 //optional - passing in genre or platform to have the api filter - send params object from axios
-const useGames = () => useData<Game>("/games");
+const useGames = (sortOrder?: string) =>
+  useData<Game>(
+    "/games",
+    {
+      params: {
+        sortOrder: sortOrder,
+      },
+    },
+    [sortOrder]
+  );
 
 export default useGames;

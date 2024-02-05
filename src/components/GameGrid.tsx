@@ -7,12 +7,15 @@ import { Genre } from "../hooks/useGenres";
 import { GameQuery } from "../App";
 
 interface Props {
-  // selectedGenre: Genre | null;
-  // selectedPlatform: Platform | null;
-  gameQuery: GameQuery | null;
+  gameQuery: GameQuery;
 }
 const GameGrid = ({ gameQuery }: Props) => {
-  const { data: allGames, error, loading, setData: setGames } = useGames();
+  const {
+    data: allGames,
+    error,
+    loading,
+    setData: setGames,
+  } = useGames(gameQuery.sort);
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
 
   let filteredGames = [...allGames];
