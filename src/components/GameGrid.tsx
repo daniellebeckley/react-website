@@ -4,32 +4,36 @@ import GameCardSkeleton from "./cards/GameCardSkeleton";
 import GameCardContainer from "./cards/GameCardContainer";
 import useGames, { Platform } from "../hooks/useGames";
 import { Genre } from "../hooks/useGenres";
+import { GameQuery } from "../App";
 
 interface Props {
-  selectedGenre: Genre | null;
-  selectedPlatform: Platform | null;
+  // selectedGenre: Genre | null;
+  // selectedPlatform: Platform | null;
+  gameQuery: GameQuery | null;
 }
-const GameGrid = ({ selectedGenre, selectedPlatform }: Props) => {
+const GameGrid = ({ gameQuery }: Props) => {
   const { data: allGames, error, loading, setData: setGames } = useGames();
   const skeletons = [1, 2, 3, 4, 5, 6, 7, 8];
 
   let filteredGames = [...allGames];
-  if (selectedPlatform) {
+  if (gameQuery?.platform) {
     filteredGames = [
       ...filteredGames.filter((game) => {
         const parentPlatformIds = game.parent_platforms.map(
           (platform) => platform.platform.id
         );
-        const has: number = parentPlatformIds.indexOf(selectedPlatform.id);
+        const has: number = parentPlatformIds.indexOf(
+          gameQuery.platform?.id || 0
+        );
         return has > -1 ? game : null;
       }),
     ];
   }
-  if (selectedGenre) {
+  if (gameQuery?.genre) {
     filteredGames = [
       ...filteredGames.filter((game) => {
         const genreIds = game.genres.map((g) => g.id);
-        const has: number = genreIds.indexOf(selectedGenre.id);
+        const has: number = genreIds.indexOf(gameQuery.genre?.id || 0);
         return has > -1 ? game : null;
       }),
     ];
