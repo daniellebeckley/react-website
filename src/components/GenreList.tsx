@@ -21,6 +21,9 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
   if (error) return null;
   return (
     <>
+      <Heading fontSize="2xl" margin="3">
+        Genres
+      </Heading>
       <List>
         {genres.map((genre) => (
           <ListItem
@@ -32,6 +35,7 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
           >
             <HStack key={genre.id}>
               <Image
+                objectFit="cover"
                 key={genre.name}
                 paddingBlock={1}
                 borderRadius={8}
@@ -43,6 +47,8 @@ const GenreList = ({ onSelectGenre, selectedGenre }: Props) => {
               <Text
                 fontSize="lg"
                 key={genre.id}
+                whiteSpace="normal"
+                textAlign="left"
                 fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
               >
                 {genre.name}
