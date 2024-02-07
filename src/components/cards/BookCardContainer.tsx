@@ -4,12 +4,12 @@ import { ReactNode } from "react";
 interface Props {
   children: ReactNode;
 }
-const GameCardContainer = ({ children }: Props) => {
+const BookCardContainer = ({ children }: Props) => {
   return (
-    <Box borderRadius={10} overflow="hidden">
+    <Box borderRadius={15} width="300px" overflow="hidden">
       {children}
     </Box>
   );
 };
 
-export default GameCardContainer;
+export default BookCardContainer;
