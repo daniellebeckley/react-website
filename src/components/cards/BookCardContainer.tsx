@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Center } from "@chakra-ui/react";
 import { ReactNode } from "react";
 
 interface Props {
@@ -6,7 +6,13 @@ interface Props {
 }
 const BookCardContainer = ({ children }: Props) => {
   return (
-    <Box borderRadius={15} width="300px" overflow="hidden">
+    <Box
+      borderRadius={15}
+      overflow="hidden"
+      paddingLeft={2}
+      paddingRight={2}
+      // width={"200px"}
+    >
       {children}
     </Box>
   );

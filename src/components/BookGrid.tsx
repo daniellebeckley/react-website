@@ -1,4 +1,4 @@
-import { Heading, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import BookCard from "./cards/BookCard";
 
 import BookCardContainer from "./cards/BookCardContainer";
@@ -13,11 +13,11 @@ const BookGrid = ({ year }: Props) => {
   return (
     <>
       <Heading>{year}</Heading>
-      <Text>Total: {books.length}</Text>
+      <Text paddingLeft={3}>Total: {books.length}</Text>
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-        padding="150px"
-        spacing={5}
+        padding={50}
+        width="1000px"
       >
         {books.map((book: Book) => (
           <BookCardContainer key={"book" + book.title}>

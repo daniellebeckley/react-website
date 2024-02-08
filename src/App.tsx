@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, Heading, Show } from "@chakra-ui/react";
+import { Box, Flex, Grid, GridItem, Heading, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
 import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
@@ -42,14 +42,16 @@ function App() {
         </GridItem>
       </Show>
       <GridItem area="main">
-        <Box paddingLeft={3}>
-          <Heading as="h1" marginY={5} fontSize="5xl">
-            Books
-          </Heading>
-          {years.map((year) => (
-            <BookGrid year={year}></BookGrid>
-          ))}
-        </Box>
+        <Heading as="h1" marginY={5} fontSize="5xl">
+          Books
+        </Heading>
+        <Flex alignContent={"center"} justifyContent={"center"}>
+          <Box>
+            {years.map((year) => (
+              <BookGrid year={year}></BookGrid>
+            ))}
+          </Box>
+        </Flex>
       </GridItem>
     </Grid>
   );

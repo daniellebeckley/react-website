@@ -53,7 +53,7 @@ export default [
     title: "A Little Yellow Dog",
     author: "Walter Mosley",
     rating: 2.5,
-    img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1336545412i/84549.jpgs",
+    img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1336545412i/84549.jpg",
   },
 
   {

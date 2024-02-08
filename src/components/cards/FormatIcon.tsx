@@ -16,7 +16,12 @@ const FormatIcon = ({ format, title }: Prop) => {
 
   return (
     <HStack marginY={1}>
-      <Icon as={iconMap[format]} color="gray.500" key={title} />
+      <Icon
+        as={iconMap[format]}
+        color="gray.500"
+        key={"icon" + title}
+        boxSize={6}
+      />
     </HStack>
   );
 };
