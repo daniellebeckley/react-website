@@ -2,7 +2,7 @@ import { Heading, SimpleGrid, Text } from "@chakra-ui/react";
 import BookCard from "./cards/BookCard";
 
 import BookCardContainer from "./cards/BookCardContainer";
-import useBooks from "../hooks/useBooks";
+import useBooks, { Book } from "../hooks/useBooks";
 
 interface Props {
   year: number;
@@ -19,7 +19,7 @@ const BookGrid = ({ year }: Props) => {
         padding="150px"
         spacing={5}
       >
-        {books.map((book) => (
+        {books.map((book: Book) => (
           <BookCardContainer key={"book" + book.title}>
             <BookCard key={book.title} book={book}></BookCard>
           </BookCardContainer>

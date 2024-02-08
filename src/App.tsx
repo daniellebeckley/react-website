@@ -3,10 +3,11 @@ import NavBar from "./components/NavBar";
 import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
 import BookGrid from "./components/BookGrid";
+import YearList from "./components/YearList";
 
 export interface GameQuery {
   genre: Genre | null;
-  platform: Platform | null;
+  platform: null;
   sort: string;
   searchText: string;
 }
@@ -30,13 +31,14 @@ function App() {
         ></NavBar>
       </GridItem>
       <Show above="lg">
-        <GridItem area="aside" paddingX={5}>
-          {/* <GenreList
-            selectedGenre={gameQuery.genre}
-            onSelectGenre={(genre: Genre) =>
-              setGameQuery({ ...gameQuery, genre })
-            }
-          ></GenreList> */}
+        <GridItem
+          area="aside"
+          paddingX={5}
+          fontSize="5xl"
+          margin="3"
+          paddingY={100}
+        >
+          <YearList></YearList>
         </GridItem>
       </Show>
       <GridItem area="main">

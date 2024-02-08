@@ -19,7 +19,7 @@ const useBooks = (year: number) => {
   if (year === 2020) return books20;
   if (year === 2021) return books21;
   if (year === 2022) return books22;
-  if (year === 2023) return books22;
+  if (year === 2023) return books23;
   if (year === 2024) return books24;
   return [];
 };
