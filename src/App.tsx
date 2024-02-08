@@ -3,7 +3,6 @@ import NavBar from "./components/NavBar";
 import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
 import BookGrid from "./components/BookGrid";
-import YearList from "./components/YearList";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -37,9 +36,7 @@ function App() {
           fontSize="5xl"
           margin="3"
           paddingY={100}
-        >
-          <YearList></YearList>
-        </GridItem>
+        ></GridItem>
       </Show>
       <GridItem area="main">
         <Heading as="h1" marginY={5} fontSize="5xl">

@@ -6,13 +6,7 @@ interface Props {
 }
 const BookCardContainer = ({ children }: Props) => {
   return (
-    <Box
-      borderRadius={15}
-      overflow="hidden"
-      paddingLeft={2}
-      paddingRight={2}
-      // width={"200px"}
-    >
+    <Box borderRadius={15} overflow="hidden" paddingX={1} paddingBottom={10}>
       {children}
     </Box>
   );

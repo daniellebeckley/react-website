@@ -16,7 +16,7 @@ const BookGrid = ({ year }: Props) => {
       <Text paddingLeft={3}>Total: {books.length}</Text>
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-        padding={50}
+        paddingX={50}
         width="1000px"
       >
         {books.map((book: Book) => (

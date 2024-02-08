@@ -5,6 +5,7 @@ import {
   HStack,
   Heading,
   Image,
+  Show,
   Skeleton,
   Text,
 } from "@chakra-ui/react";
@@ -18,26 +19,28 @@ interface Props {
 }
 const BookCard = ({ book }: Props) => {
   return (
-    <Card borderRadius={25} padding={0} width="100%">
+    <Card borderRadius={25} padding={0} width="90%">
       <Flex alignContent={"center"} justifyContent={"center"}>
-        <Image
-          height="230px"
-          width="100%"
-          src={book.img || noImage}
-          borderRadius={25}
-          paddingTop={0}
-        ></Image>
+        <Show above="md">
+          <Image
+            height="230px"
+            width="100%"
+            src={book.img || noImage}
+            borderRadius={25}
+            paddingTop={0}
+          ></Image>
+        </Show>
       </Flex>
       <CardBody height="40px">
         <HStack justifyContent="space-between" marginBottom="3">
-          <Heading fontSize="2xl">{book.title}</Heading>
+          <Heading fontSize="xl">{book.title}</Heading>
 
           <FormatIcon
             format={book.audiobook ? "audiobook" : "physical"}
             title={book.title}
           />
         </HStack>
-        <Text fontSize="xl">Author: {book.author}</Text>
+        <Text fontSize="large">Author: {book.author}</Text>
         <HStack>
           <Rating rating={book.rating || 0}></Rating>
         </HStack>
