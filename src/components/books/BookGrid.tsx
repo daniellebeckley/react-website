@@ -1,8 +1,8 @@
 import { Box, Heading, SimpleGrid, Text } from "@chakra-ui/react";
-import BookCard from "./cards/BookCard";
+import BookCard from "./BookCard";
 
-import BookCardContainer from "./cards/BookCardContainer";
-import useBooks, { Book } from "../hooks/useBooks";
+import BookCardContainer from "./BookCardContainer";
+import useBooks, { Book } from "../../hooks/useBooks";
 
 interface Props {
   year: number;
