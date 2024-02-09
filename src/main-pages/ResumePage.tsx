@@ -1,6 +1,6 @@
 import { Button, Heading, Image } from "@chakra-ui/react";
 import React from "react";
-import resume from "./src/assets/BECKLEY_DANIELLE.pdf";
+import resume from "../assets/BECKLEY_DANIELLE.pdf";
 import { BsDownload } from "react-icons/bs";
 
 const ResumePage = () => {
