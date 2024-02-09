@@ -1,4 +1,5 @@
 import { HStack, Icon } from "@chakra-ui/react";
+import React from "react";
 import { IconType } from "react-icons";
 import { IoBook } from "react-icons/io5";
 import { PiHeadphonesDuotone } from "react-icons/pi";

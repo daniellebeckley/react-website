@@ -3,6 +3,7 @@ import logo from "../assets/lightning.png";
 import ColorModeSwitch from "./ColorModeSwitch";
 import { FaReact } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import React from "react";
 const NavBar = () => {
   return (
     <>

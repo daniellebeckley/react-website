@@ -3,6 +3,7 @@ import BookCard from "./BookCard";
 
 import BookCardContainer from "./BookCardContainer";
 import useBooks, { Book } from "../../hooks/useBooks";
+import React from "react";
 
 interface Props {
   year: number;
@@ -11,14 +12,24 @@ interface Props {
 }
 const BookGrid = ({ year, format, favorite }: Props) => {
   let books = useBooks(year);
-  let displayBooks = [...books];
+  let displayBooks: Book[] = [...books];
 
   if (format === "audiobook") {
-    console.log("filtering");
-    displayBooks = books.filter((b: Book) => b.audiobook);
+    displayBooks = [];
+    books.forEach((b: Book) => {
+      if (b.audiobook) {
+        displayBooks.push(b);
+      }
+    });
   }
-  if (format === "physical")
-    displayBooks = books.filter((b: Book) => !b.audiobook);
+  if (format === "physical") {
+    displayBooks = [];
+    books.forEach((b: Book) => {
+      if (!b.audiobook) {
+        displayBooks.push(b);
+      }
+    });
+  }
 
   if (favorite) displayBooks = displayBooks.filter((b: Book) => b.favorite);
 

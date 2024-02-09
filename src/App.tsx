@@ -5,6 +5,7 @@ import BookPage from "./main-pages/BookPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ResumePage from "./main-pages/ResumePage";
 import AboutMe from "./main-pages/AboutMe";
+import React from "react";
 
 function App() {
   return (
