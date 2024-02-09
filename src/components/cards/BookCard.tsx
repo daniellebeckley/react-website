@@ -30,6 +30,15 @@ const BookCard = ({ book }: Props) => {
             paddingTop={0}
           ></Image>
         </Show>
+        <Show below="sm">
+          <Image
+            height="130px"
+            width="70%"
+            src={book.img || noImage}
+            borderRadius={5}
+            paddingTop={0}
+          ></Image>
+        </Show>
       </Flex>
       <CardBody height="100px" padding={1}>
         <HStack justifyContent="space-between" marginBottom="3">
