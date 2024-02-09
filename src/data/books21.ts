@@ -18,13 +18,13 @@ export default [
     img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1436228651i/46917.jpg",
   },
   {
-    title: "Carson McCullers",
-    author: "The Ballad of the Sad Cafe",
+    title: "The Member of the Wedding",
+    author: "Carson McCullers",
     rating: 4,
   },
   {
-    title: "Carson McCullers",
-    author: "The Member of the Wedding",
+    title: "The Member of the Weddings",
+    author: "Carson McCullers",
     rating: 3,
     img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1689264611i/330244.jpg",
   },

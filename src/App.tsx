@@ -1,18 +1,13 @@
 import { Box, Flex, Grid, GridItem, Heading, Show } from "@chakra-ui/react";
 import NavBar from "./components/NavBar";
-import { useState } from "react";
-import { Genre } from "./hooks/useGenres";
 import BookGrid from "./components/BookGrid";
+import Filter from "./components/Filter";
+import { useState } from "react";
 
-export interface GameQuery {
-  genre: Genre | null;
-  platform: null;
-  sort: string;
-  searchText: string;
-}
 function App() {
-  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
-  const years = [2024, 2023, 2022, 2021, 2020, 2019, 2018];
+  const years = [2024, 2023, 2022, 2021, 2020, 2019];
+  const [format, setFormat] = useState("");
+
   return (
     <Grid
       templateAreas={{
@@ -25,9 +20,13 @@ function App() {
       }}
     >
       <GridItem area="nav">
-        <NavBar
-          onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
-        ></NavBar>
+        <NavBar />
+        <Filter
+          onClick={(type) => {
+            setFormat(type);
+            console.log("set the type to" + type);
+          }}
+        />
       </GridItem>
       <Show above="lg">
         <GridItem
@@ -45,7 +44,11 @@ function App() {
         <Flex alignContent={"center"} justifyContent={"center"}>
           <Box>
             {years.map((year) => (
-              <BookGrid year={year}></BookGrid>
+              <BookGrid
+                key={"year" + year}
+                year={year}
+                format={format}
+              ></BookGrid>
             ))}
           </Box>
         </Flex>
