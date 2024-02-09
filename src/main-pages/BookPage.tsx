@@ -1,8 +1,8 @@
 import { Grid, GridItem, Show, Flex, HStack, Box } from "@chakra-ui/react";
 import React, { useState } from "react";
-import BookGrid from "./BookGrid";
-import FavoriteSwitch from "./FavoriteSwitch";
-import FormatFilter from "../FormatFilter";
+import BookGrid from "../components/books/BookGrid";
+import FavoriteSwitch from "../components/books/FavoriteSwitch";
+import FormatFilter from "../components/FormatFilter";
 
 const BookPage = () => {
   const years = [2024, 2023, 2022, 2021, 2020, 2019];

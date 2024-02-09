@@ -27,8 +27,9 @@ const BookGrid = ({ year, format, favorite }: Props) => {
       <Heading>{year}</Heading>
       <Text paddingLeft={3}>Total: {displayBooks.length}</Text>
       <SimpleGrid
-        columns={{ base: 2, sm: 6, md: 6, lg: 8, xl: 8 }}
-        paddingX={100}
+        columns={{ base: 2, sm: 4, md: 4, lg: 6, xl: 8 }}
+        paddingX="5%"
+        width="90%"
       >
         {displayBooks.map((book: Book) => (
           <BookCardContainer key={"book" + year + book.title}>

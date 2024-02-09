@@ -1,9 +1,10 @@
 import { Grid, GridItem, Show } from "@chakra-ui/react";
-import AboutMe from "./AboutMe";
+import Index from "./main-pages/Index";
 import NavBar from "./components/NavBar";
-import BookPage from "./components/books/BookPage";
+import BookPage from "./main-pages/BookPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import ResumePage from "./ResumePage";
+import ResumePage from "./main-pages/ResumePage";
+import AboutMe from "./main-pages/AboutMe";
 
 function App() {
   return (
@@ -33,9 +34,12 @@ function App() {
           </Show>
           <GridItem area="main">
             <Routes>
-              <Route path="/about" element={<AboutMe />} />
+              <Route path="/index" element={<Index />} />
+              <Route path="/" element={<Index />} />
               <Route path="/book" element={<BookPage />} />
               <Route path="/resume" element={<ResumePage />} />
+              <Route path="/aboutme" element={<AboutMe />} />
+              <Route path="/about" element={<AboutMe />} />
             </Routes>
           </GridItem>
         </Grid>

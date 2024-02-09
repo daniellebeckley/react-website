@@ -11,13 +11,16 @@ const NavBar = () => {
         <List>
           <HStack>
             <ListItem padding="10%">
-              <NavLink to="/about">About</NavLink>
+              <NavLink to="/index">Index</NavLink>
             </ListItem>
             <ListItem padding="10%">
               <NavLink to="/book">Books</NavLink>
             </ListItem>
             <ListItem padding="10%">
               <NavLink to="/resume">Resumé</NavLink>
+            </ListItem>
+            <ListItem padding="10%">
+              <NavLink to="/about">About</NavLink>
             </ListItem>
           </HStack>
         </List>
