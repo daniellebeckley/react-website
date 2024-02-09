@@ -3,12 +3,14 @@ export default [
     title: "Emma",
     author: "Jane Austen",
     rating: 5,
+    favorite: true,
     img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1373627931i/6969.jpg",
   },
   {
     title: "Migraine",
     author: "Oliver Sacks",
     rating: 4.5,
+    favorite: true,
     img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1386924208i/66720.jpg",
   },
   {

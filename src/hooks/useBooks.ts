@@ -12,6 +12,7 @@ export interface Book {
   rating?: number;
   audiobook?: boolean;
   img?: string;
+  favorite?: boolean;
 }
 
 const useBooks = (year: number) => {

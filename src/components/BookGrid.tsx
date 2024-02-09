@@ -7,10 +7,12 @@ import useBooks, { Book } from "../hooks/useBooks";
 interface Props {
   year: number;
   format: string;
+  favorite: boolean;
 }
-const BookGrid = ({ year, format }: Props) => {
+const BookGrid = ({ year, format, favorite }: Props) => {
   let books = useBooks(year);
   let displayBooks = [...books];
+
   if (format === "audiobook") {
     console.log("filtering");
     displayBooks = books.filter((b: Book) => b.audiobook);
@@ -18,14 +20,16 @@ const BookGrid = ({ year, format }: Props) => {
   if (format === "physical")
     displayBooks = books.filter((b: Book) => !b.audiobook);
 
+  if (favorite) displayBooks = displayBooks.filter((b: Book) => b.favorite);
+
   return (
     <>
       <Heading>{year}</Heading>
-      <Text paddingLeft={3}>Total: {books.length}</Text>
+      <Text paddingLeft={3}>Total: {displayBooks.length}</Text>
       <SimpleGrid
-        columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
+        columns={{ sm: 1, md: 2, lg: 3, xl: 8 }}
         paddingX={50}
-        width="1000px"
+        width="1200px"
       >
         {displayBooks.map((book: Book) => (
           <BookCardContainer key={"book" + year + book.title}>

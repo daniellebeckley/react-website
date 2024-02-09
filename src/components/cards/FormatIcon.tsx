@@ -21,6 +21,7 @@ const FormatIcon = ({ format, title }: Prop) => {
         color="gray.500"
         key={"icon" + title}
         boxSize={6}
+        paddingRight={1}
       />
     </HStack>
   );

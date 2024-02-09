@@ -121,7 +121,13 @@ export default [
     rating: 3.5,
     img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1608832152i/53404228.jpg",
   },
-  { title: "BossyPants", author: "Tina Fey", audiobook: true, rating: 4 },
+  {
+    title: "BossyPants",
+    author: "Tina Fey",
+    audiobook: true,
+    rating: 4,
+    img: "https://m.media-amazon.com/images/I/41Cd8u5kFyL._SY445_SX342_.jpg",
+  },
   {
     title: "Yes Please!",
     author: "Amy Poehler",

@@ -19,28 +19,28 @@ interface Props {
 }
 const BookCard = ({ book }: Props) => {
   return (
-    <Card borderRadius={25} padding={0} width="90%">
+    <Card borderRadius={15} padding={0} width="90%">
       <Flex alignContent={"center"} justifyContent={"center"}>
         <Show above="md">
           <Image
-            height="230px"
-            width="100%"
+            height="130px"
+            width="500%"
             src={book.img || noImage}
-            borderRadius={25}
+            borderRadius={5}
             paddingTop={0}
           ></Image>
         </Show>
       </Flex>
-      <CardBody height="40px">
+      <CardBody height="100px" padding={1}>
         <HStack justifyContent="space-between" marginBottom="3">
-          <Heading fontSize="xl">{book.title}</Heading>
+          <Heading fontSize="sm">{book.title}</Heading>
 
           <FormatIcon
             format={book.audiobook ? "audiobook" : "physical"}
             title={book.title}
           />
         </HStack>
-        <Text fontSize="large">Author: {book.author}</Text>
+        <Text fontSize="xs">Author: {book.author}</Text>
         <HStack>
           <Rating rating={book.rating || 0}></Rating>
         </HStack>

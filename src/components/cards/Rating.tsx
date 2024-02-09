@@ -8,7 +8,7 @@ const Rating = ({ rating }: Props) => {
   var elements = [];
   for (let i = 0; i < rating; i++) {
     elements.push(
-      <TiStarOutline key={i} fill="#ff6b81" size={25}></TiStarOutline>
+      <TiStarOutline key={i} fill="#ff6b81" size={15}></TiStarOutline>
     );
   }
   return elements;

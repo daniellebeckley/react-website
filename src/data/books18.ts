@@ -9,12 +9,14 @@ export default [
     title: "American Pastoral",
     author: "Philip Roth",
     rating: 5,
+    favorite: true,
     img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1504801263i/11650.jpg",
   },
   {
     title: "Love In The Time of Cholera",
     author: "Gabriel García Márquez",
     rating: 5,
+    favorite: true,
     img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1644691354i/9712.jpg",
   },
   {
@@ -58,6 +60,7 @@ export default [
     title: "Crime and Punishment ",
     author: " Fyodor Dostoyevsky",
     rating: 5,
+    favorite: true,
     img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1382846449i/7144.jpg",
   },
   {
