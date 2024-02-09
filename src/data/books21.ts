@@ -44,6 +44,7 @@ export default [
     title: "Atonement",
     author: "Ian McEwan",
     rating: 5,
+    favorite: true,
     img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1320449708i/6867.jpg",
   },
   {

@@ -16,6 +16,7 @@ export default [
     title: "I’m Glad My Mom Died",
     author: "Jennette McCurdy",
     rating: 4,
+    favorite: true,
     img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1649286799i/59364173.jpg",
     audiobook: true,
   },
@@ -23,6 +24,7 @@ export default [
     title: "Jailbird",
     author: "Kurt Vonnegut",
     rating: 4.5,
+    favorite: true,
     img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1514676373i/4987.jpg",
   },
   {

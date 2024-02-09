@@ -84,12 +84,14 @@ export default [
     author: "Ernest Hemingway",
     info: "Wisconsin Trip Book",
     rating: 4.5,
+    favorite: true,
     img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1509802323i/3876.jpg",
   },
   {
     title: "The Plot Against American",
     author: "Philip Roth",
     rating: 5,
+    favorite: true,
     img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1553896240i/703.jpg",
   },
   {
@@ -120,6 +122,7 @@ export default [
     title: "Farewell To Arms",
     author: "Ernest Hemingway",
     rating: 4,
+    favorite: true,
     img: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1697399823i/130473580.jpg",
   },
   {
