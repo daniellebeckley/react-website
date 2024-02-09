@@ -1,9 +1,9 @@
 import { HStack, Image, List, ListItem } from "@chakra-ui/react";
-import logo from "../assets/lightning.png";
 import ColorModeSwitch from "./ColorModeSwitch";
 import { FaReact } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import React from "react";
+import { REPO_NAME } from "../App";
 const NavBar = () => {
   return (
     <>
@@ -11,17 +11,17 @@ const NavBar = () => {
         <FaReact size={50} />
         <List>
           <HStack>
-            <ListItem padding="10%">
-              <NavLink to="/index">Index</NavLink>
+            <ListItem>
+              <NavLink to={REPO_NAME}>Index</NavLink>
             </ListItem>
-            <ListItem padding="10%">
-              <NavLink to="/book">Books</NavLink>
+            <ListItem>
+              <NavLink to={REPO_NAME + "book"}>Books</NavLink>
             </ListItem>
-            <ListItem padding="10%">
-              <NavLink to="/resume">Resumé</NavLink>
+            <ListItem>
+              <NavLink to={REPO_NAME + "resume"}>Resumé</NavLink>
             </ListItem>
-            <ListItem padding="10%">
-              <NavLink to="/about">About</NavLink>
+            <ListItem>
+              <NavLink to={REPO_NAME + "about"}>About</NavLink>
             </ListItem>
           </HStack>
         </List>

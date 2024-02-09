@@ -5,9 +5,15 @@ import BookPage from "./main-pages/BookPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ResumePage from "./main-pages/ResumePage";
 import AboutMe from "./main-pages/AboutMe";
-import React from "react";
+import React, { useEffect } from "react";
+
+export const REPO_NAME = "react-website/";
 
 function App() {
+  useEffect(() => {
+    document.title = "Dani's Website";
+  }, []);
+
   return (
     <>
       <BrowserRouter>
@@ -35,12 +41,10 @@ function App() {
           </Show>
           <GridItem area="main">
             <Routes>
-              <Route path="/index" element={<Index />} />
-              <Route path="/" element={<Index />} />
-              <Route path="/book" element={<BookPage />} />
-              <Route path="/resume" element={<ResumePage />} />
-              <Route path="/aboutme" element={<AboutMe />} />
-              <Route path="/about" element={<AboutMe />} />
+              <Route path={REPO_NAME} element={<Index />} />
+              <Route path={REPO_NAME + "book"} element={<BookPage />} />
+              <Route path={REPO_NAME + "resume"} element={<ResumePage />} />
+              <Route path={REPO_NAME + "about"} element={<AboutMe />} />
             </Routes>
           </GridItem>
         </Grid>
@@ -48,7 +52,6 @@ function App() {
     </>
   );
   {
-    /* return <BookPage />; */
   }
 }
 
