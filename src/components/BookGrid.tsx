@@ -27,7 +27,7 @@ const BookGrid = ({ year, format, favorite }: Props) => {
       <Heading>{year}</Heading>
       <Text paddingLeft={3}>Total: {displayBooks.length}</Text>
       <SimpleGrid
-        columns={{ sm: 1, md: 2, lg: 3, xl: 8 }}
+        columns={{ base: 4, sm: 6, md: 6, lg: 8, xl: 8 }}
         paddingX={50}
         width="1200px"
       >

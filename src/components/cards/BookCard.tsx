@@ -21,7 +21,7 @@ const BookCard = ({ book }: Props) => {
   return (
     <Card borderRadius={15} padding={0} width="90%">
       <Flex alignContent={"center"} justifyContent={"center"}>
-        <Show above="md">
+        <Show above="sm">
           <Image
             height="130px"
             width="500%"
